@@ -1,0 +1,54 @@
+/* Achtergrondkleur van de hele pagina */
+body {
+    background-color: #fff7f0;
+}
+
+/* Container voor de inhoud*/
+.container {
+  max-width: 520px;
+  margin: 40px auto;
+  background: #f5e5d3;
+  border-radius: 20px;
+  border: 2px solid #a65e2e;
+  box-shadow: 0 8px 25px rgba(166, 94, 46, 0.3);
+  padding: 25px 50px 25px 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #4a3c31;
+}
+
+/* Titel styling*/
+h2 {
+  text-align: center;
+  color: #a65e2e;
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px #e0c4a2;
+}
+
+/* Tabel voor het overzicht van de bestelling*/
+.bestelling-overzicht {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+/* Koptekst van de tabel*/
+.bestelling-overzicht thead tr {
+  background-color: #a65e2e;
+  color: #fff7f0;
+  font-weight: 700;
+}
+
+/* Tabelcellen (th en td)*/
+.bestelling-overzicht th,
+.bestelling-overzicht td {
+  border: 1.5px solid #a65e2e;
+  padding: 18px 18px;
+  text-align: left;
+}
+
+/* Hover-effect voor rijen in tbody*/
+.bestelling-overzicht tbody tr:hover {
+  background-color: #f5e5d3;
+}

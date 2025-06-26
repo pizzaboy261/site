@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bestelling Plaatsen</title>
+  <!-- CSS linken -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Javascript linken -->
+  <script src="bestellen.js" defer></script>
+</head>
+<body>
+  <!-- Titel van de pagina -->
+  <h2>Bestel je gerechten</h2>
+
+  <!-- Bestelformulier -->
+  <form id="bestelform" action="verwerk_bestelling.php" method="POST">
+
+    <!-- Gerecht 1: Pasta -->
+    <div class="gerecht">
+      <!-- selecteerbaar gerecht -->
+      <div class="gerecht-button" onclick="toggleAantal('pasta')">Pasta Bolognese (€8,50)</div>
+      <!-- Dropbox voor aantal -->
+      <div class="aantal" id="aantal-pasta" style="display: none;">
+        <label for="aantal_pasta">Aantal:</label>
+        <select name="aantal_pasta" id="aantal_pasta">
+          <option value="0" selected>0</option>
+          <!-- Keuzes 1 t/m 5 -->
+          <option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Gerecht 2: Pizza -->
+    <div class="gerecht">
+      <div class="gerecht-button" onclick="toggleAantal('pizza')">Pizza Margherita (€9,00)</div>
+      <div class="aantal" id="aantal-pizza" style="display: none;">
+        <label for="aantal_pizza">Aantal:</label>
+        <select name="aantal_pizza" id="aantal_pizza">
+          <option value="0" selected>0</option>
+          <option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Gerecht 3: Caesar Salad -->
+    <div class="gerecht">
+      <div class="gerecht-button" onclick="toggleAantal('salade')">Caesar Salad (€7,00)</div>
+      <div class="aantal" id="aantal-salade" style="display: none;">
+        <label for="aantal_salade">Aantal:</label>
+        <select name="aantal_salade" id="aantal_salade">
+          <option value="0" selected>0</option>
+          <option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Gerecht 4: Soep -->
+    <div class="gerecht">
+      <div class="gerecht-button" onclick="toggleAantal('soep')">Tomatensoep (€5,50)</div>
+      <div class="aantal" id="aantal-soep" style="display: none;">
+        <label for="aantal_soep">Aantal:</label>
+        <select name="aantal_soep" id="aantal_soep">
+          <option value="0" selected>0</option>
+          <option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Kamernummer invoeren en max 3 cijfers -->
+    <p>
+      <label for="kamernummer">Kamernummer (3 cijfers):</label>
+      <input type="text" id="kamernummer" name="kamernummer" pattern="\d{3}" maxlength="3" required />
+    </p>
+
+    <!-- Bezorgtijd met keuze AM/PM -->
+    <p>
+      <label for="bezorgtijd">Bezorgtijd:</label>
+      <div class="time-container">
+        <!-- Tijd invoer -->
+        <input type="time" id="bezorgtijd" name="bezorgtijd" required />
+        <!-- Keuze tussen AM en PM -->
+        <select name="ampm" id="ampm" required>
+          <option value="" disabled selected>AM/PM</option>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </div>
+    </p>
+
+    <!-- Bestelknop -->
+    <button type="submit">Bestellen</button>
+
+    <!-- Foutmelding voor als er niks is ingevuld -->
+    <div id="foutmelding" style="color: red; margin-top: 15px; font-weight: 600;"></div>
+  </form>
+</body>
+</html>
